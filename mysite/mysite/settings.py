@@ -27,7 +27,7 @@ SECRET_KEY = '-1&koj_&$nygnb+ewaa+05$ara83if#j*omo*_ihn*aiblkav^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'salty-sierra-53863.herokuapp.com']
 
 
 # Application definition
