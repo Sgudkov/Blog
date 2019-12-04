@@ -1,0 +1,34 @@
+from django.views.generic import TemplateView, ListView, DetailView
+from .models import Post
+from django.db.models import Q
+from django.http import HttpResponseRedirect
+# Create your views here.
+
+class HomePageView(ListView):
+    model = Post
+    template_name = 'home.html'
+    context_object_name = 'posts_list'
+    paginate_by = 3
+
+class ArticlesPageView(ListView):
+    model = Post
+    template_name = 'articles.html'
+    context_object_name = 'articles_list'
+
+class DetailArticle(DetailView):
+    model = Post
+    template_name = 'articles.html'
+    context_object_name = 'articles'
+
+
+class SearchResultsView(ListView):
+    model = Post
+    template_name = 'search.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query  is not None:
+            object_list = Post.objects.filter(
+                Q(head__icontains=query) | Q(text__icontains=query)
+            )
+            return object_list

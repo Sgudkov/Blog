@@ -1,0 +1,17 @@
+{% extends "home.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "body.html" %}
+<div class="container-fluid">
+    <ul class="list-group" style="margin-top: 50px">
+    <li class="list-group-item">{{ articles.head }}</li>
+    <li class="list-group-item">{{ articles.text }}</li>
+
+<!--    <a href="{% url 'home' %} " class="btn btn-outline-primary"> Вернуться</a>-->
+
+
+    </ul>
+</div>
+
+
+{% endblock %}
