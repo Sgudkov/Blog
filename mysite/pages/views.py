@@ -32,3 +32,4 @@ class SearchResultsView(ListView):
                 Q(head__icontains=query) | Q(text__icontains=query)
             )
             return object_list
+
