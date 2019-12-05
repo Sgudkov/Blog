@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <ul class="list-group" style="margin-top: 50px">
     <li class="list-group-item">{{ articles.head }}</li>
-    <li class="list-group-item">{{ articles.text }}</li>
+    <li class="list-group-item">{{ articles.text|safe }}</li>
 
     {% block pagination %}
         {% if is_paginated %}

@@ -19,8 +19,17 @@ class DetailArticle(DetailView):
     model = Post
     template_name = 'articles.html'
     context_object_name = 'articles'
-    paginate_by = 1
 
+
+class ClassesView(ListView):
+    model = Post
+    template_name = 'classes.html'
+    context_object_name = 'classes_list'
+
+class FuncView(ListView):
+    model = Post
+    template_name = 'FM.html'
+    context_object_name = 'fm_list'
 
 class SearchResultsView(ListView):
     model = Post
